@@ -1,0 +1,14 @@
+<h1>Lista de Productos</h1>
+<button mat-raised-button (click)="toggleLista()">
+  {{ listaVisible ? 'Ocultar Lista' : 'Mostrar Lista' }}
+</button>
+
+<ng-container *ngIf="listaVisible">
+  <div *ngFor="let producto of productos">
+    <ul>
+      <li>
+        {{ producto.nombre }} - {{ producto.costo }}     
+      </li>
+    </ul>    
+  </div>
+</ng-container>
